@@ -15,7 +15,7 @@
         <PackageProjectUrl>https://github.com/bromix/Bromix.Fluent.RegularExpression</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageTags>Blazor;MudBlazor;Material;Material Design;Material Design Icons</PackageTags>
+        <PackageTags>Fluent;RegEx;RegularExpression;Regular Expression;</PackageTags>
         <PackageIcon>Logo.png</PackageIcon>
         <RepositoryUrl>https://github.com/bromix/Bromix.Fluent.RegularExpression</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
