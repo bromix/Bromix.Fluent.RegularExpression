@@ -45,6 +45,29 @@ public sealed class Pattern
         return this;
     }
 
+    public Pattern OneOf(string first, string second, params string[] additional)
+    {
+        return OneOf(Quantifier.None, first, second, additional);
+    }
+
+    public Pattern OneOf(Quantifier quantifier, string first, string second, params string[] additional)
+    {
+        var firstPattern = With().Literal(first);
+        var secondPattern = With().Literal(second);
+        _stringBuilder.AppendFormat("({0}|{1}", firstPattern, secondPattern);
+
+        foreach (var choice in additional)
+        {
+            var additionalPattern = With().Literal(choice);
+            _stringBuilder.AppendFormat("|{0}", additionalPattern);
+        }
+
+        _stringBuilder
+            .Append(")")
+            .Append(quantifier);
+        return this;
+    }
+
     /// <summary>
     /// Returns a <see cref="Pattern"/> that matches the character class specified by the given <paramref name="characterClass"/> delegate.
     /// </summary>
