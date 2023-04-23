@@ -49,7 +49,7 @@ public sealed class PatternTests
     {
         Pattern.With().Digit(Quantifier.Exactly(4)).ToString().Should().Be(@"\d{4}");
     }
-    
+
     [Fact]
     public void Pattern_With_Word()
     {
@@ -63,15 +63,52 @@ public sealed class PatternTests
     }
 
     [Fact]
-    public void OneOf()
+    public void OneOf_Pattern()
     {
-        var group = Pattern.With()
+        Pattern.With()
             .OneOf(
                 Quantifier.Optional,
                 p => p.CharacterClass(Quantifier.AtMost(10), cc => cc.Range('0', '9')),
                 p => p.CharacterClass(Quantifier.AtMost(10), cc => cc.Range('a', 'z')),
                 p => p.CharacterClass(Quantifier.AtMost(10), cc => cc.Range('A', 'Z')))
-            .ToString();
+            .ToString()
+            .Should().Be("([0-9]{,10}|[a-z]{,10}|[A-Z]{,10})?");
+    }
+
+    [Fact]
+    public void OneOf_CharacterClass()
+    {
+        Pattern.With()
+            .OneOf('1', '2')
+            .ToString()
+            .Should().Be("[12]");
+    }
+
+    [Fact]
+    public void OneOf_CharacterClass_With_OneOrMore()
+    {
+        Pattern.With()
+            .OneOf(Quantifier.OneOrMore, '1', '2')
+            .ToString()
+            .Should().Be("[12]+");
+    }
+    
+    [Fact]
+    public void OneOf_Literal()
+    {
+        Pattern.With()
+            .OneOf("Hello", "World")
+            .ToString()
+            .Should().Be("(Hello|World)");
+    }
+    
+    [Fact]
+    public void OneOf_Literal_With_OneOrMore()
+    {
+        Pattern.With()
+            .OneOf(Quantifier.OneOrMore, "Hello", "World")
+            .ToString()
+            .Should().Be("(Hello|World)+");
     }
 
     [Fact]
