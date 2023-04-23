@@ -1,8 +1,8 @@
-name: Create Preview Release
+name: Create Release
 on:
   push:
     tags:
-      - "v[0-9]+.[0-9]+.[0-9]+-preview-[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+"
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
