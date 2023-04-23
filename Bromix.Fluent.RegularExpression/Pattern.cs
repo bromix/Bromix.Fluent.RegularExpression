@@ -2,8 +2,15 @@
 
 namespace Bromix.Fluent.RegularExpression;
 
+/// <summary>
+/// A <see cref="Pattern"/> object that represents the regular expression pattern.
+/// </summary>
 public sealed class Pattern
 {
+    /// <summary>
+    /// Create a new <see cref="Pattern"/> object.
+    /// </summary>
+    /// <returns>A <see cref="Pattern"/> object that represents the regular expression pattern.</returns>
     public static Pattern With() => new();
 
     private Pattern()
@@ -253,6 +260,10 @@ public sealed class Pattern
         return this;
     }
 
+    /// <summary>
+    /// Returns the regular expression pattern.
+    /// </summary>
+    /// <returns>The regular expression pattern.</returns>
     public override string ToString()
     {
         return _stringBuilder.ToString();
