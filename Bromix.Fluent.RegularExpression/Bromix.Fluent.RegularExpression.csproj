@@ -11,7 +11,7 @@
 
     <PropertyGroup>
         <Title>Bromix.Fluent.RegularExpression</Title>
-        <Description>Material Design Icons for MudBlazor</Description>
+        <Description>Fluent API for creating regular expression patterns.</Description>
         <Copyright>Copyright bromix</Copyright>
         <Authors>bromix</Authors>
         <PackageProjectUrl>https://github.com/bromix/Bromix.Fluent.RegularExpression</PackageProjectUrl>
