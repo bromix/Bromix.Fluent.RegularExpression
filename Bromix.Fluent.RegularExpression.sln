@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bromix.Fluent.RegularExpres
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bromix.Fluent.RegularExpression.Tests", "Bromix.Fluent.RegularExpression.Tests\Bromix.Fluent.RegularExpression.Tests.csproj", "{036B61A1-C75A-4DE9-86CE-A6E05A81140E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "Examples\Examples.csproj", "{15FC06D2-63C1-4F7E-B5D2-313E6A75792A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{036B61A1-C75A-4DE9-86CE-A6E05A81140E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{036B61A1-C75A-4DE9-86CE-A6E05A81140E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{036B61A1-C75A-4DE9-86CE-A6E05A81140E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15FC06D2-63C1-4F7E-B5D2-313E6A75792A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15FC06D2-63C1-4F7E-B5D2-313E6A75792A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15FC06D2-63C1-4F7E-B5D2-313E6A75792A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15FC06D2-63C1-4F7E-B5D2-313E6A75792A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
