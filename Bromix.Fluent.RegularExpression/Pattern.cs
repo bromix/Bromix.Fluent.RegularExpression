@@ -277,7 +277,7 @@ public sealed class Pattern
     /// Appends the "$" anchor to the current <see cref="Pattern"/> object to match the end of a line.
     /// </summary>
     /// <returns>A <see cref="Pattern"/> object that represents the regular expression pattern.</returns>
-    public object EndOfLine()
+    public Pattern EndOfLine()
     {
         _stringBuilder.Append("$");
         return this;
