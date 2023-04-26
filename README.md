@@ -18,7 +18,7 @@ dotnet add package Bromix.Fluent.RegularExpression
 
 ## Usage
 
-Here are some simple examples to get a sense of how it works.
+Here are some simple examples to get a sense of how it works. For more detailed information, you can use the [wiki](https://github.com/bromix/Bromix.Fluent.RegularExpression/wiki).
 
 ### Match Year
 
