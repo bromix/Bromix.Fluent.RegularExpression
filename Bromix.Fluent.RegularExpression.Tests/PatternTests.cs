@@ -11,7 +11,18 @@ public sealed class PatternTests
     [InlineData("]", @"\]")]
     [InlineData("+", @"\+")]
     [InlineData("Hello", @"Hello")]
-    public void Pattern_With_Literal(string input, string expected)
+    public void Pattern_With_Literal_As_String(string input, string expected)
+    {
+        Pattern.With().Literal(input).ToString().Should().Be(expected);
+    }
+
+    [Theory]
+    [InlineData('(', @"\(")]
+    [InlineData(')', @"\)")]
+    [InlineData('[', @"\[")]
+    [InlineData(']', @"\]")]
+    [InlineData('+', @"\+")]
+    public void Pattern_With_Literal_As_Char(char input, string expected)
     {
         Pattern.With().Literal(input).ToString().Should().Be(expected);
     }
@@ -92,7 +103,7 @@ public sealed class PatternTests
             .ToString()
             .Should().Be("[12]+");
     }
-    
+
     [Fact]
     public void OneOf_Literal()
     {
@@ -101,7 +112,7 @@ public sealed class PatternTests
             .ToString()
             .Should().Be("(Hello|World)");
     }
-    
+
     [Fact]
     public void OneOf_Literal_With_OneOrMore()
     {

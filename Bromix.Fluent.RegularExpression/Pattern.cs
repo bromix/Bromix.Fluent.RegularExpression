@@ -193,6 +193,14 @@ public sealed class Pattern
     public Pattern Literal(string literal) => Literal(Quantifier.None, literal);
 
     /// <summary>
+    /// Appends a literal character to the current <see cref="Pattern"/> object.
+    /// Characters that need to be escaped in a regular expression pattern will be automatically escaped.
+    /// </summary>
+    /// <param name="literal">The literal character to append to the pattern.</param>
+    /// <returns>A <see cref="Pattern"/> object that represents the regular expression pattern.</returns>
+    public Pattern Literal(char literal) => Literal(Quantifier.None, literal.ToString());
+
+    /// <summary>
     /// Appends a literal string to the current <see cref="Pattern"/> object.
     /// Any characters in the string that need to be escaped in a regular expression pattern will be automatically escaped.
     /// </summary>
