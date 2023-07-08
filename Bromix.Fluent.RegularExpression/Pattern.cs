@@ -198,7 +198,7 @@ public sealed class Pattern
     /// </summary>
     /// <param name="literal">The literal character to append to the pattern.</param>
     /// <returns>A <see cref="Pattern"/> object that represents the regular expression pattern.</returns>
-    public Pattern Literal(char literal) => Literal(Quantifier.None, literal.ToString());
+    public Pattern Literal(char literal) => Literal(Quantifier.None, literal);
 
     /// <summary>
     /// Appends a literal string to the current <see cref="Pattern"/> object.
@@ -234,6 +234,19 @@ public sealed class Pattern
 
         _stringBuilder.Append(quantifier);
 
+        return this;
+    }
+
+    /// <summary>
+    /// Appends a literal character to the current <see cref="Pattern"/> object.
+    /// Characters that need to be escaped in a regular expression pattern will be automatically escaped.
+    /// </summary>
+    /// <param name="quantifier">The <see cref="Quantifier"/> to use for the literal.</param>
+    /// <param name="literal">The literal string to append to the pattern.</param>
+    /// <returns>A <see cref="Pattern"/> object that represents the regular expression pattern.</returns>
+    public Pattern Literal(Quantifier quantifier, char literal)
+    {
+        Literal(quantifier, literal.ToString());
         return this;
     }
 
