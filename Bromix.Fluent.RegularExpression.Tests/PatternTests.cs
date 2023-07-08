@@ -37,6 +37,15 @@ public sealed class PatternTests
         Pattern.With().Literal(Quantifier.Optional, input).ToString().Should().Be(expected);
     }
 
+    [Theory]
+    [InlineData('(', @"\(?")]
+    [InlineData(')', @"\)?")]
+    [InlineData('+', @"\+?")]
+    public void Pattern_With_Literal_As_Char_And_Quantifier_Optional(char input, string expected)
+    {
+        Pattern.With().Literal(Quantifier.Optional, input).ToString().Should().Be(expected);
+    }
+
     [Fact]
     public void Pattern_With_StartOfLine()
     {
