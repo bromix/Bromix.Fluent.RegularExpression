@@ -313,6 +313,6 @@ public sealed class Pattern
         return _stringBuilder.ToString();
     }
 
-    private const string CharsToEscape = @"()[]+";
+    private const string CharsToEscape = @"()[]+.";
     private readonly StringBuilder _stringBuilder = new();
 }
