@@ -3,10 +3,10 @@
     <PropertyGroup>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <LangVersion>11</LangVersion>
+        <LangVersion>12</LangVersion>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">true</GeneratePackageOnBuild>
-        <TargetFrameworks>netstandard2.1;net6.0;net7.0;netstandard2.0</TargetFrameworks>
+        <TargetFrameworks>net7.0;netstandard2.0;netstandard2.1;net8.0</TargetFrameworks>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -27,5 +27,12 @@
         <None Include="../Logo.png" Pack="true" PackagePath="/" />
         <None Include="../README.md" Pack="true" PackagePath="/" />
         <None Include="../LICENSE" Pack="true" PackagePath="/" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SonarAnalyzer.CSharp" Version="9.16.0.82469">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 </Project>

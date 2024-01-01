@@ -7,6 +7,9 @@ namespace Bromix.Fluent.RegularExpression;
 /// </summary>
 public sealed class Pattern
 {
+    private const string CharsToEscape = "()[]+.";
+    private readonly StringBuilder _stringBuilder = new();
+
     /// <summary>
     /// Create a new <see cref="Pattern"/> object.
     /// </summary>
@@ -63,7 +66,7 @@ public sealed class Pattern
         }
 
         _stringBuilder
-            .Append(")")
+            .Append(')')
             .Append(quantifier);
         return this;
     }
@@ -284,13 +287,21 @@ public sealed class Pattern
         return this;
     }
 
+    public Pattern Any() => Any(Quantifier.None);
+
+    public Pattern Any(Quantifier quantifier)
+    {
+        _stringBuilder.Append($".{quantifier}");
+        return this;
+    }
+
     /// <summary>
     /// Appends the "^" anchor to the current <see cref="Pattern"/> object to match the start of a line.
     /// </summary>
     /// <returns>A <see cref="Pattern"/> object that represents the regular expression pattern.</returns>
     public Pattern StartOfLine()
     {
-        _stringBuilder.Append("^");
+        _stringBuilder.Append('^');
         return this;
     }
 
@@ -300,7 +311,7 @@ public sealed class Pattern
     /// <returns>A <see cref="Pattern"/> object that represents the regular expression pattern.</returns>
     public Pattern EndOfLine()
     {
-        _stringBuilder.Append("$");
+        _stringBuilder.Append('$');
         return this;
     }
 
@@ -312,7 +323,4 @@ public sealed class Pattern
     {
         return _stringBuilder.ToString();
     }
-
-    private const string CharsToEscape = @"()[]+.";
-    private readonly StringBuilder _stringBuilder = new();
 }
