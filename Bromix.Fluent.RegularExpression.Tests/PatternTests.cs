@@ -140,4 +140,16 @@ public sealed class PatternTests
                     .Range('A', 'Z')))
             .ToString();
     }
+
+    [Fact]
+    public void Any()
+    {
+        Pattern.With().Any().ToString().Should().Be(".");
+    }
+    
+    [Fact]
+    public void Any_With_Quantifier()
+    {
+        Pattern.With().Any(Quantifier.ZeroOrMore).ToString().Should().Be(".*");
+    }
 }
